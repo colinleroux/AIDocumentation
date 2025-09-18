@@ -58,3 +58,66 @@ storage account will need to be provided.
 ## Libreoffice version
 
 ` soffice --version`
+
+## Tornado logging - adding date to entries in log
+
+### on windows 
+
+Edit the .bat launch file to include the flag :
+
+`set FMT=-Dcom.docmosis.webserver.launch.logging.TornadoLogFormatter.format=%1$tF %1$tT,%1$tL [%2$s] %3$s %4$s - %5$s %6$s%n`
+
+For example : 
+
+```
+@echo off
+REM Launch Script for Docmosis Tornado
+
+REM Un-comment lines below to change configuration
+set PORT=-Dport=8090
+set DEBUG=-Dlog.level=FINE
+
+REM Un-comment the next line to use a specific version of Java (update to your Java folder)
+REM "C:\Program Files\Java\jdk1.8.0_51\bin\java.exe" %DEBUG% %PORT% -jar docmosisTornado2.10.2.war
+
+REM allow blank password
+REM set DOCMOSIS_ADMINPWALLOWBLANK=true
+
+set FMT=-Dcom.docmosis.webserver.launch.logging.TornadoLogFormatter.format=%1$tF %1$tT,%1$tL [%2$s] %3$s %4$s - %5$s %6$s%n
+REM allow UNC paths
+REM set DOCMOSIS_ALLOWUNCPATHS=true
+
+java %DEBUG% %PORT% %FMT% -jar docmosisTornado2.10.2.war
+
+pause
+
+```
+
+### In Docker
+
+```
+handlers=java.util.logging.ConsoleHandler
+#Normal logging at INFO level
+.level=INFO
+
+#Detailed logging at DEBUG level
+#.level=FINE
+
+java.util.logging.ConsoleHandler.level=FINE
+java.util.logging.ConsoleHandler.formatter=com.docmosis.webserver.launch.logging.TornadoLogFormatter
+com.docmosis.webserver.launch.logging.TornadoLogFormatter.format=%1$tF %1$tT,%1$tL [%2$s] %3$s %4$s - %5$s %6$s%n
+
+```
+The string format is a Java format as per https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html
+ 
+%1 is the current date time, and $t is the date time format prefix. So the date time output is as follows, in order:
+ 
+'F'     ISO 8601 complete date formatted as "%tY-%tm-%td".
+
+'T'     Time formatted for the 24-hour clock as "%tH:%tM:%tS".
+
+'L'     Millisecond within the second formatted as three digits with leading zeros as necessary, i.e. 000 - 999.
+
+ 
+You would therefore need to adjust your Dockerfile accordingly otherwise you will need to locate your logging.properties file and update accordingly.
+

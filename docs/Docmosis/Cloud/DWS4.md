@@ -244,6 +244,47 @@ In Template
 
 After adding 60 Days <<$datePlus60>>
 ```
+Multiple region dates : 
+
+```
+I’m looking for some guidance on the best way to handle date formatting for multiple regions, such as the US and Australia, within the same template.
+
+At the moment, I’m using syntax like renderer=date('dd/MM/yyyy','dd/MM/yyyy - HH:mm') or renderer=date('dd/MM/yyyy','dd/MM/yyyy'), as you can see in the attached template (front page and last page).
+
+The challenge is that this approach doesn’t display correctly in the US, where the expected format is MM/dd/yyyy. 
+
+A typical date string looks like 15/09/2025 - 10:12 (sample data attached).
+
+Could you please recommend the best way to handle regional date formatting so it displays correctly across both US and Australian regions for the same template? Is there additional data I could be including in the actual data including say locale information which could be used by Docmosis ?
+```
+```
+If you replace your current renderer =date(.... with this code : 
+ 
+<<{dateFormat(mediaDate,mapi(locale, 'US', 'MM/dd/yyyy - HH:mm', 'AU', 'dd/MM/yyyy - HH:mm','dd/MM/yyyy - HH:mm'),'dd/MM/yyyy - HH:mm',locale)}>>
+ 
+include a new key locale in the payload for example : 
+For American : 
+{
+  "mediaDate": "15/09/2025 - 10:12",
+  "locale": "US",
+} 
+or for Australian 
+{
+  "mediaDate": "15/09/2025 - 10:12",
+  "locale": "AU"
+}
+```
+
+```
+<<{dateFormat(mediaDate,mapi(locale, 'US', 'MM/dd/yyyy - HH:mm', 'AU', 'dd/MM/yyyy - HH:mm','dd/MM/yyyy - HH:mm'),'dd/MM/yyyy - HH:mm',locale,’AU’)}>>
+ 
+More verbose but easier to follow - declare a variable - if local is missing set it to AU - replace locale with the variable in the formula : 
+ 
+<<$lo=’’>>
+<<$lo={ifBlank(locale,‘AU’)}>>
+<<{dateFormat(media1Date,mapi($lo, 'US', 'MM/dd/yyyy - HH:mm', 'AU', 'dd/MM/yyyy - HH:mm','dd/MM/yyyy - HH:mm'),'dd/MM/yyyy - HH:mm',$lo)}>>
+```
+
 
 ### Checkboxes
 https://resources.docmosis.com/example-templates/generate-disclosure-form-from-template
