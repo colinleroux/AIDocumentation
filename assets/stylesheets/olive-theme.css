@@ -1,0 +1,17 @@
+/* Olive theme overrides for both light and dark modes */
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #6b8e23;
+  --md-primary-fg-color--light: #8cab3a;
+  --md-primary-fg-color--dark: #4f6e1a;
+  --md-accent-fg-color: #6b8e23;
+  --md-typeset-a-color: #5f7f1f;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #7ea332;
+  --md-primary-fg-color--light: #98bb51;
+  --md-primary-fg-color--dark: #648426;
+  --md-accent-fg-color: #9cc957;
+  --md-typeset-a-color: #a9d466;
+}
