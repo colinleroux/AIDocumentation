@@ -24,6 +24,8 @@ A practical knowledge base for designing, building, and improving AI systems. It
 
 ## Key Projects
 
+- [MVP Internal RAG](projects/mvp-internal-rag.md)
+- [docx2html Pipeline](projects/docx2html-pipeline.md)
 - [Internal RAG System](projects/internal-rag-system.md)
 - Prompt and tool orchestration prototypes
 - Model and chunking experiments

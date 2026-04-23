@@ -7,7 +7,7 @@ theme:
     text: Merriweather Sans
     code: Red Hat Mono
   icon:
-    logo: fontawesome/solid/hotdog
+    logo: fontawesome/solid/microchip
   favicon: assets/favicon.ico
   features:
     - navigation.footer
@@ -17,14 +17,17 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Dark mode
-      primary: teal
-      accent: blue
+      primary: green
+      accent: green
     - scheme: default
       toggle:
         icon: material/weather-night
         name: Light mode
-      primary: deep orange
-      accent: blue
+      primary: green
+      accent: green
+
+extra_css:
+  - assets/stylesheets/olive-theme.css
 
 nav:
   - Home: index.md
@@ -40,6 +43,8 @@ nav:
       - Performance: local-models/performance.md
   - Projects:
       - Overview: projects/index.md
+      - MVP Internal RAG: projects/mvp-internal-rag.md
+      - docx2html Pipeline: projects/docx2html-pipeline.md
       - Internal RAG System: projects/internal-rag-system.md
   - Patterns & Recipes:
       - Overview: patterns/index.md

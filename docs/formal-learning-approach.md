@@ -105,6 +105,15 @@ AI-enabled tools that can interact with internal systems and automate tasks, not
 - Hands-on implementation through existing and new internal projects
 - Selective study of emerging standards and tools (for example, MCP, local model frameworks)
 
+## Evidence from Current Projects
+
+The development plan is already being applied through active internal project work:
+
+- [MVP Internal RAG](projects/mvp-internal-rag.md): containerized local-model RAG assistant using Flask/FastAPI, Ollama, and Qdrant with citation-backed responses.
+- [docx2html Pipeline](projects/docx2html-pipeline.md): production-focused document conversion and content assembly workflow with validation and optional AI-assisted enrichment.
+
+These projects provide practical delivery context for the focus areas above and create a measurable base for the next 6-12 months of capability growth.
+
 ## Summary
 
 This plan builds on my existing strengths in Python-based application development and aligns my growth with modern AI engineering practices. It focuses on practical, high-impact skills that support both current responsibilities and future business needs.
