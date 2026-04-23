@@ -48,6 +48,7 @@ nav:
       - Prompt Templates: patterns/prompt-templates.md
       - Tool Calling Patterns: patterns/tool-calling-patterns.md
   - Tooling & Stack: tooling.md
+  - Formal Learning Approach: formal-learning-approach.md
   - Experiments & Findings:
       - Overview: experiments/index.md
       - RAG vs No RAG: experiments/rag-vs-no-rag.md

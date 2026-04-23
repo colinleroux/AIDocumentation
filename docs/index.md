@@ -40,6 +40,7 @@ Build small, measure early, keep systems observable, and prefer repeatable patte
 - [Projects](projects/index.md)
 - [Patterns & Recipes](patterns/index.md)
 - [Tooling & Stack](tooling.md)
+- [Formal Learning Approach](formal-learning-approach.md)
 - [Experiments & Findings](experiments/index.md)
 - [Mistakes & Lessons Learned](lessons.md)
 - [Future Ideas / Roadmap](roadmap.md)
