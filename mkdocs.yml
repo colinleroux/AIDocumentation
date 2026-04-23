@@ -1,5 +1,6 @@
-site_name: Colin's Docmosis Notes
-site_url: https://sitename.example
+﻿site_name: Colin's AI Engineering Notes
+site_url: https://colinleroux.github.io/AIDocumentation/
+
 theme:
   name: material
   font:
@@ -12,21 +13,50 @@ theme:
     - navigation.footer
     - content.code.copy
   palette:
-    # Dark Mode
     - scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Dark mode
       primary: teal
       accent: blue
-
-    # Light Mode
     - scheme: default
       toggle:
         icon: material/weather-night
         name: Light mode
       primary: deep orange
       accent: blue
+
+nav:
+  - Home: index.md
+  - AI Engineering Fundamentals: ai-fundamentals.md
+  - RAG Systems:
+      - Overview: rag/index.md
+      - Chunking: rag/chunking.md
+      - Retrieval: rag/retrieval.md
+      - Evaluation: rag/evaluation.md
+  - Local Models:
+      - Overview: local-models/index.md
+      - Ollama: local-models/ollama.md
+      - Performance: local-models/performance.md
+  - Projects:
+      - Overview: projects/index.md
+      - Internal RAG System: projects/internal-rag-system.md
+  - Patterns & Recipes:
+      - Overview: patterns/index.md
+      - RAG Pipeline: patterns/rag-pipeline.md
+      - Flask AI App Structure: patterns/flask-ai-app-structure.md
+      - Prompt Templates: patterns/prompt-templates.md
+      - Tool Calling Patterns: patterns/tool-calling-patterns.md
+  - Tooling & Stack: tooling.md
+  - Experiments & Findings:
+      - Overview: experiments/index.md
+      - RAG vs No RAG: experiments/rag-vs-no-rag.md
+      - Model Comparison: experiments/model-comparison.md
+      - Chunk Size Testing: experiments/chunk-size-testing.md
+  - Mistakes & Lessons Learned: lessons.md
+  - Future Ideas / Roadmap: roadmap.md
+  - Architecture Diagrams: architecture.md
+  - Glossary: glossary.md
 
 markdown_extensions:
   - attr_list
@@ -50,5 +80,4 @@ markdown_extensions:
   - pymdownx.details
   - md_in_html
 
-
-copyright: Copyright &copy; 2025 ColinleRoux
+copyright: Copyright &copy; 2026 Colin le Roux
